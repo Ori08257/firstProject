@@ -1,0 +1,202 @@
+    <?php
+
+        $connection = new mysqli('localhost', 'root', '', 'blugapp');
+        $result = $connection->query("SELECT `Title`, `Descript` FROM `blugdetails` WHERE 1");
+        while($row = $result->fetch_assoc()) {
+            echo $row['Title'] . " " . $row['Descript'] . "<br>";
+        }
+
+    ?>
+<html>
+    <head>
+        <title>Ori Posts</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #f4f4f9;
+                color: #333;
+            }
+
+            #divForSearch {
+                width: 100%;
+                background-color: #2c3e50;
+                height: 80px;
+                display: flex;
+                justify-content: center; 
+                align-items: center;
+                padding: 10px;
+            }
+
+            #searchBlog {
+                border-radius: 25px;
+                padding: 15px 20px;
+                width: 600px; 
+                font-size: 18px;
+                border: none;
+                outline: none;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                margin-left: 400px;
+            }
+
+            #btnSearch {
+                padding: 15px 25px; 
+                border-radius: 25px;
+                font-size: 18px; 
+                height: 50px; 
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 15px;
+                background-color: #ecf0f1;
+                border: none;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            #btnSearch:hover {
+                background-color: #bdc3c7;
+            }
+
+            #btnSearch img {
+                width: 25px;
+                height: 25px;
+            }
+
+            #sec {
+                display: flex;
+                align-items: center;
+                margin: 30px 0;
+                padding: 0 20px;
+            }
+
+            #sec img {
+                border-radius: 15px;
+                width: 40%;
+                height: auto;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                margin-right: 30px;
+            }
+
+            h1 {
+                font-size: 48px;
+                color: #2c3e50;
+                margin-left: 50px;
+                margin-bottom: 400px;
+            }
+
+            h2 {
+                font-size: 48px;
+                color: #2c3e50;
+                text-align: center;
+                margin-top: 50px;
+                margin-bottom: 30px;
+            }
+
+            p {
+                font-size: 20px;
+                line-height: 1.8;
+                color: #555;
+                text-align: center;
+                margin-bottom: 40px;
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #btnCreat {
+                border-radius: 30px;
+                background-color: #1abc9c;
+                width: 220px;
+                height: 60px;
+                font-size: 22px;
+                margin: 0 auto;
+                display: block;
+                transition: transform 0.2s ease-in-out;
+                cursor: pointer;
+                border: none;
+            }
+
+            #btnCreat:hover {
+                transform: translateY(-5px);
+                background-color: #16a085;
+            }
+
+            #btnCreat:focus {
+                outline: none;
+            }
+
+            footer {
+                text-align: center;
+                margin-top: 50px;
+                padding: 20px;
+                background-color: #2c3e50;
+                color: white;
+            }
+
+            #things {
+                gap: 50px;
+                margin-left: 300px;
+                color: rgb(255, 255, 255);
+                display: flex;
+            }
+
+            a {
+                color: white;
+            }
+
+            a:hover {
+                color: rgb(2, 204, 255);
+            }
+
+            #forFixing {
+                margin-top: 1000px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="divForSearch">
+            <input type="text" name="search" id="searchBlog" placeholder="Search for a blog">
+            <button type="submit" id="btnSearch"><img src="c:\wamp64\www\Blogpage\send.png" alt="Search"></button>
+            <div id="things">
+                <span><a href="#">Home</a></span>
+                <span><a href="#">Help</a></span>
+                <span><a href="#forHref">About us</a></span>
+            </div>
+        </div>
+        
+        <div id="sec">
+            <img src="c:\wamp64\www\Blogpage\TheGoodOne.jpg" alt="Main Image">
+            <h1>Blogs -</h1>
+        </div>
+        
+        <div id="forFixing">
+            <h2>About Us</h2>
+            
+            <p id="forHref">
+                Welcome to our blog! We are a group of passionate writers and individuals dedicated to providing you with insightful, inspiring, and high-quality content. Our goal is to offer you a rich and diverse reading experience as we share thoughts, ideas, and experiences across various topics. Whether you’re looking for information, inspiration, or simply an interesting read, we’re here to deliver the best content for you.
+            </p>
+            
+            <p>
+                For creating your own blog, click the button below.
+            </p>
+            
+            <form action="creatBlogPage.html">
+                <button id="btnCreat" type="submit">Create</button>
+            </form>
+
+            <footer>
+                <p>&copy; 2024 Ori Posts. All rights reserved.</p>
+            </footer>
+        </div>
+        
+    </body>
+</html>
